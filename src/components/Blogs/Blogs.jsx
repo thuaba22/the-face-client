@@ -1,8 +1,18 @@
 import { FaCalendar } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const Blogs = () => {
+  useEffect(() => {
+    AOS.init({ duration: "1000" });
+  }, []);
   return (
     <div className="container bg-[#FFFFCC] md:h-[470px]">
-      <div className="flex flex-col items-center justify-center h-full my-auto md:flex-row gap-4">
+      <div
+        data-aos="zoom-in"
+        className="flex flex-col items-center justify-center h-full my-auto md:flex-row gap-4"
+      >
         <div className="space-y-3 text-[#800]">
           <img src="https://i.postimg.cc/FzKS4PY2/blog1.png" alt="" />
           <h3 className="font-extrabold">COOL GIRL WITH TATOO</h3>
