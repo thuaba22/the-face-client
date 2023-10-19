@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AboutSubscribe from "../../components/AboutSubscribe/AboutSubscribe";
+import Blogs from "../../components/Blogs/Blogs";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -29,6 +30,11 @@ const Home = () => {
       <div data-aos="zoom-in">
         <AboutSubscribe></AboutSubscribe>
       </div>
+
+      <div className="mt-[120px] mb-10">
+        <h2 className="text-[45px] text-center text-[#800]">From The Blog</h2>
+      </div>
+      <Blogs></Blogs>
     </div>
   );
 };

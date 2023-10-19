@@ -8,7 +8,7 @@ import {
 const AboutSubscribe = () => {
   return (
     <div className="container  max-w-6xl mx-auto mt-20 mb-20 md:h-[400px]  rounded-xl">
-      <div className="flex h-full md:flex-row gap-4">
+      <div className="flex flex-col h-full md:flex-row gap-4">
         <div className="border-8 flex-1 p-10 text-center space-y-6 border-[#FFFFCC]">
           <h2 className="font-extrabold text-3xl text-[#800]">
             GET 10% DISCOUNT
