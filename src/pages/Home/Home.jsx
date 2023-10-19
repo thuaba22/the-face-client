@@ -3,9 +3,17 @@ import Features from "../../components/Features/Features";
 import Banner from "../../components/Headers/Banners/Banner";
 import Navbar from "../../components/Headers/Navbar/Navbar";
 import Brands from "../../components/Brands/Brands";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import AboutSubscribe from "../../components/AboutSubscribe/AboutSubscribe";
 
 const Home = () => {
   const brands = useLoaderData();
+  useEffect(() => {
+    AOS.init({ duration: "1000" });
+  }, []);
+
   return (
     <div>
       <Navbar></Navbar>
@@ -18,6 +26,9 @@ const Home = () => {
         </h2>
       </div>
       <Brands brands={brands}></Brands>
+      <div data-aos="zoom-in">
+        <AboutSubscribe></AboutSubscribe>
+      </div>
     </div>
   );
 };
