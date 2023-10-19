@@ -51,7 +51,7 @@ const Register = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="hero min-h-screen bg-red-100">
+      <div className="hero min-h-screen  bg-[#FFFFCC]">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
             <ToastContainer></ToastContainer>

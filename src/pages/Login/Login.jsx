@@ -52,7 +52,7 @@ const Login = () => {
     <div>
       <Navbar></Navbar>
 
-      <div className="hero container w-full md:min-h-screen bg-red-100">
+      <div className="hero container w-full md:min-h-screen  bg-[#FFFFCC]">
         <ToastContainer />
         <div className="hero-content flex-col">
           <div className="text-center md:mb-10">

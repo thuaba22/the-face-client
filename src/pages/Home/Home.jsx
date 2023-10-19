@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AboutSubscribe from "../../components/AboutSubscribe/AboutSubscribe";
 import Blogs from "../../components/Blogs/Blogs";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   const brands = useLoaderData();
@@ -35,6 +36,7 @@ const Home = () => {
         <h2 className="text-[45px] text-center text-[#800]">From The Blog</h2>
       </div>
       <Blogs></Blogs>
+      <Footer></Footer>
     </div>
   );
 };
