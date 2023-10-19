@@ -1,0 +1,32 @@
+[
+  {
+    "brand_id": 1,
+    "brand_name": "L'Oréal",
+    "brand_image": "https://i.postimg.cc/nVRTYjsZ/lorealpic.jpg"
+  },
+  {
+    "brand_id": 2,
+    "brand_name": "Estée Lauder",
+    "brand_image": "https://i.postimg.cc/BvPn5T2x/este.png"
+  },
+  {
+    "brand_id": 3,
+    "brand_name": "Chanel",
+    "brand_image": "https://i.postimg.cc/x1vy1QbD/80b757db5a18dab2828b07a8d488c502.jpg"
+  },
+  {
+    "brand_id": 4,
+    "brand_name": "Dior",
+    "brand_image": "https://i.postimg.cc/4NbQJZcC/dior.png"
+  },
+  {
+    "brand_id": 5,
+    "brand_name": "Urban Decay",
+    "brand_image": "https://i.postimg.cc/43bgPY7L/2020-01-urban-decay-bt-build2.jpg"
+  },
+  {
+    "brand_id": 6,
+    "brand_name": "Revlon",
+    "brand_image": "https://i.postimg.cc/zBBchvnR/revlon.jpg"
+  }
+]
