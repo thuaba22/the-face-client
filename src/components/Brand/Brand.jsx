@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const Brand = ({ brand }) => {
-  const { brand_id, brand_name, brand_image } = brand || {};
+  const { brand_name, brand_image } = brand || {};
 
   return (
     <div className="w-[80%] mx-auto md:w-full">

@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+/* eslint-disable react/prop-types */
 const ProductCard = ({ product }) => {
   const { name, brandName, type, price, description, rating, photo } = product;
 
@@ -31,9 +34,12 @@ const ProductCard = ({ product }) => {
 
         <div className="rating">{ratingInputs}</div>
         <div className="flex justify-end gap-3 mt-3">
-          <button className="btn btn-sm btn-outline btn-info">
+          <Link
+            to={`/product/${product._id}`}
+            className="btn btn-sm btn-outline btn-info"
+          >
             Show Details
-          </button>
+          </Link>
           <button className="btn btn-sm">
             Update
             <svg

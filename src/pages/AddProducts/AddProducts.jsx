@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import Navbar from "../../components/Headers/Navbar/Navbar";
 import { ToastContainer, toast } from "react-toastify";
@@ -35,13 +36,16 @@ const AddProducts = () => {
 
     console.log("Form Data:", formData);
 
-    fetch("http://localhost:3000/product", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
+    fetch(
+      "https://the-face-store-server-ogu3fm87r-thuabas-projects.vercel.app/product",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

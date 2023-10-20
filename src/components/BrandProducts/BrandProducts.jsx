@@ -5,14 +5,12 @@ import ProductSlide from "../ProductSlide/ProductSlide";
 
 const BrandProducts = () => {
   const products = useLoaderData();
+  console.log(products);
 
-  // Extract the brand name from the first product (assuming all products have the same brand)
   const brandName = products.length > 0 ? products[0].brandName : "";
 
-  // Filter products for the selected brand
-  const brandProducts = products.filter(
-    (product) => product.brandName === brandName
-  );
+  const brandProducts =
+    products && products?.filter((product) => product.brandName === brandName);
 
   return (
     <div>
