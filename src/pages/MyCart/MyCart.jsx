@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Navbar from "../../components/Headers/Navbar/Navbar";
+import Swal from "sweetalert2";
 
 const MyCart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -27,11 +28,35 @@ const MyCart = () => {
     }
   }, [auth.user]);
 
-  // Function to remove an item from the cart
-  const removeFromCart = (itemId) => {
-    // You'll need to implement the removal logic here
-    // This is a placeholder function
-    console.log(`Removing item with ID: ${itemId}`);
+  const deleteCartItem = (itemId) => {
+    console.log(`Deleting item with ID: ${itemId}`);
+
+    fetch(`http://localhost:3000/user/cart/${auth.user.email}/${itemId}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          Swal.fire(
+            "Deleted!",
+            "Your item has been removed from the cart.",
+            "success"
+          );
+          const updatedCart = cartItems.filter((item) => item._id !== itemId);
+          setCartItems(updatedCart);
+        } else {
+          console.error("Item not found in the cart.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting the item from the cart:", error);
+      });
   };
 
   return (
@@ -50,7 +75,7 @@ const MyCart = () => {
                 Price: {item.product.price} Tk
               </div>
               <button
-                onClick={() => removeFromCart(item._id)}
+                onClick={() => deleteCartItem(item._id)}
                 className="text-red-500 font-semibold focus:outline-none hover:text-red-700"
               >
                 Delete
