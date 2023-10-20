@@ -36,16 +36,13 @@ const AddProducts = () => {
 
     console.log("Form Data:", formData);
 
-    fetch(
-      "https://the-face-store-server-ogu3fm87r-thuabas-projects.vercel.app/product",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    )
+    fetch("http://localhost:3000/product", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -73,6 +70,7 @@ const AddProducts = () => {
                   onChange={handleInputChange}
                   placeholder="Product Name"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -87,6 +85,7 @@ const AddProducts = () => {
                   placeholder="Brand Name"
                   onChange={handleInputChange}
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -103,6 +102,7 @@ const AddProducts = () => {
                   onChange={handleInputChange}
                   placeholder="Product Type"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -117,6 +117,7 @@ const AddProducts = () => {
                   onChange={handleInputChange}
                   placeholder="Price"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -135,6 +136,7 @@ const AddProducts = () => {
                   onChange={handleInputChange}
                   placeholder="Product Description"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -150,6 +152,7 @@ const AddProducts = () => {
                   value="1"
                   onChange={handleRatingChange} // Add this line
                   className="mask mask-star-2 bg-orange-400"
+                  required
                 />
                 <input
                   type="radio"
@@ -157,6 +160,7 @@ const AddProducts = () => {
                   value="2"
                   onChange={handleRatingChange} // Add this line
                   className="mask mask-star-2 bg-orange-400"
+                  required
                 />
                 <input
                   type="radio"
@@ -164,6 +168,7 @@ const AddProducts = () => {
                   value="3"
                   onChange={handleRatingChange} // Add this line
                   className="mask mask-star-2 bg-orange-400"
+                  required
                 />
                 <input
                   type="radio"
@@ -171,6 +176,7 @@ const AddProducts = () => {
                   value="4"
                   onChange={handleRatingChange} // Add this line
                   className="mask mask-star-2 bg-orange-400"
+                  required
                 />
                 <input
                   type="radio"
@@ -178,6 +184,7 @@ const AddProducts = () => {
                   value="5"
                   onChange={handleRatingChange} // Add this line
                   className="mask mask-star-2 bg-orange-400"
+                  required
                 />
               </div>
             </div>
@@ -194,6 +201,7 @@ const AddProducts = () => {
                   onChange={handleInputChange}
                   placeholder="Photo URL"
                   className="input input-bordered w-full"
+                  required
                 />
               </label>
             </div>
@@ -202,6 +210,7 @@ const AddProducts = () => {
             type="submit"
             value="Add Product"
             className="btn bg-[#800] hover:bg-[#800000] text-white btn-block"
+            required
           />
         </form>
       </div>
