@@ -8,11 +8,15 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import BrandProducts from "../components/BrandProducts/BrandProducts";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
+import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+
     children: [
       {
         path: "/",
@@ -23,7 +27,9 @@ const router = createBrowserRouter([
         path: "/brands/:brand_name",
         element: <BrandProducts></BrandProducts>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/product/brand/${params.brand_name}`),
+          fetch(
+            `https://the-face-store-server-rfsm6nrpx-thuabas-projects.vercel.app/product/brand/${params.brand_name}`
+          ),
       },
       {
         path: "/product/:productId",
@@ -33,7 +39,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/product/${params.productId}`),
+          fetch(
+            `https://the-face-store-server-rfsm6nrpx-thuabas-projects.vercel.app/product/${params.productId}`
+          ),
       },
       {
         path: "/addProduct",
@@ -42,6 +50,16 @@ const router = createBrowserRouter([
             <AddProducts></AddProducts>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/update/:productId",
+        element: (
+          <PrivateRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivateRoute>
+        ),
+        // loader: ({ params }) =>
+        //   fetch(`https://the-face-store-server-rfsm6nrpx-thuabas-projects.vercel.app/product/${params.productId}`),
       },
       {
         path: "/myCart",
@@ -56,7 +74,7 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
-        path: "Register",
+        path: "/register",
         element: <Register></Register>,
       },
     ],

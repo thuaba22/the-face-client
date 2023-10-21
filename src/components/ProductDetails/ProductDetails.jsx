@@ -19,16 +19,19 @@ const ProductDetails = () => {
       product: product,
     });
 
-    fetch("http://localhost:3000/product/add-to-cart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        user: auth.user.email, // Assuming you have the user's email
-        product: product,
-      }),
-    })
+    fetch(
+      "https://the-face-store-server-rfsm6nrpx-thuabas-projects.vercel.app/product/add-to-cart",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          user: auth.user.email, // Assuming you have the user's email
+          product: product,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -51,19 +54,19 @@ const ProductDetails = () => {
                 className="w-full rounded-lg"
               />
             </div>
-            <div className="text-gray-800">
+            <div className="text-[#800]">
               <h1 className="text-3xl font-bold">{product.name}</h1>
-              <p className="text-xl mt-2 text-gray-600">
+              <p className="text-xl mt-2 text-[#800]">
                 Brand: {product.brandName}
               </p>
-              <p className="text-xl text-gray-600">Type: {product.type}</p>
-              <p className="text-xl text-gray-600">Price: {product.price} Tk</p>
-              <p className="text-xl text-gray-600">Rating: {product.rating}</p>
-              <p className="text-xl text-gray-600 mt-4">Description:</p>
-              <p className="text-lg text-gray-700">{product.description}</p>
+              <p className="text-xl text-[#800]">Type: {product.type}</p>
+              <p className="text-xl text-[#800]">Price: {product.price} Tk</p>
+              <p className="text-xl text-[#800]">Rating: {product.rating}</p>
+              <p className="text-xl text-[#800] mt-4">Description:</p>
+              <p className="text-lg text-[#800]">{product.description}</p>
               <ToastContainer></ToastContainer>
               <button
-                className="bg-blue-500 text-white py-2 px-4 mt-4 rounded-full hover:bg-blue-600"
+                className="bg-[#800] text-white py-2 px-4 mt-4 rounded-full hover:bg-[#800]"
                 onClick={addToCart}
               >
                 Add to Cart

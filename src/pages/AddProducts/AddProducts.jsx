@@ -36,13 +36,16 @@ const AddProducts = () => {
 
     console.log("Form Data:", formData);
 
-    fetch("http://localhost:3000/product", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
+    fetch(
+      "https://the-face-store-server-rfsm6nrpx-thuabas-projects.vercel.app/product",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
