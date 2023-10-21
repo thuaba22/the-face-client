@@ -177,7 +177,7 @@ const Navbar = () => {
                 ) : (
                   <FaUser></FaUser>
                 )}
-                <h3 className="ml-2">{user.displayName || "User"}</h3>
+                <h3 className="ml-2 text-sm">{user.displayName || "User"}</h3>
               </div>
             ) : (
               <FaUser className="text-[#800000]"></FaUser>

@@ -6,7 +6,7 @@ const Logo = () => {
         src="https://i.postimg.cc/YSyPcQnV/tf-1.png"
         alt=""
       />
-      <h1 className="text-3xl font-semibold text-[#800000]">
+      <h1 className="text-md md:text-3xl font-semibold text-[#800000]">
         The<span className="font-bold">Face</span>
       </h1>
     </div>
