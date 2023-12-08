@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Root from "../layouts/Root";
 import AddProducts from "../pages/AddProducts/AddProducts";
-import MyCart from "../pages/MyCart/myCart";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
@@ -10,6 +9,7 @@ import BrandProducts from "../components/BrandProducts/BrandProducts";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
 import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import MyCart from "../pages/MyCart/MyCart";
 
 const router = createBrowserRouter([
   {
